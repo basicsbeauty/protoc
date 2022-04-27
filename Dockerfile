@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:1.17-alpine
 
 # Install required additional tooling
 RUN apk --no-cache add git protobuf make protobuf-dev
