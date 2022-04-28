@@ -18,5 +18,6 @@ RUN go get -d github.com/envoyproxy/protoc-gen-validate@v0.6.7 &&\
     cd $GOPATH/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v0.6.7 &&\
     make build
 
-# create alias
-RUN alias protoc='protoc -I=./ -I="/go/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v0.6.7"'
+COPY /go/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v0.6.7/ /opt/include/
+
+ENTRYPOINT [ "protoc", "-I/opt/include" ]
