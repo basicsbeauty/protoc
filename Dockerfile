@@ -12,6 +12,7 @@ RUN go get -u google.golang.org/grpc@v1.46.0
 
 # Install protoc go plugin
 RUN go get -u google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.0
+RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 
 # Install protoc-gen-validate
 RUN go get -d github.com/envoyproxy/protoc-gen-validate@v0.6.7 &&\
