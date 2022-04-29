@@ -20,4 +20,4 @@ RUN go get -d github.com/envoyproxy/protoc-gen-validate@v0.6.7 &&\
 
 RUN cp -rf $GOPATH/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v0.6.7/ /opt/include/
 
-ENTRYPOINT [ "protoc", "-I/opt/include" ]
+ENTRYPOINT [ "protoc", "-I./", "-I/opt/include" ]
